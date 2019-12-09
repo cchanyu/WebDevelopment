@@ -15,4 +15,4 @@ https://github.com/cchanyu/WebDevelopment/tree/master/
 ```
 
 ### Preview:
-<a href = "/img/gif1.gif"><img src = "/img/gif1.gif">
+<a href = "./img/gif1.gif"><img src = "./img/gif1.gif">
