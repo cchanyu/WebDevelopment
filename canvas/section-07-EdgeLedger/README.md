@@ -13,4 +13,4 @@ and Google Maps API involved.
 ```
 
 ### Preview:
-<a href = "/img/gif1.gif"><img src = "/img/gif1.gif">
+<a href = "./img/gif1.gif"><img src = "./img/gif1.gif">
