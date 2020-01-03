@@ -1,0 +1,54 @@
+
+/* Contact */
+
+#contact {
+  background: #fff;
+}
+ 
+
+#contact {
+  background: #fff;
+}
+
+#contact .contact-heading {
+  color: white;
+  display:flex;
+  font-size: 3rem;
+  align-items: center;
+  text-align: center;
+  color: #052340;
+  flex: 1;
+}
+
+#contact .contact-form .form-group {
+  margin: 0.7rem;
+  align-items: center;
+}
+
+#contact .contact-form label {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: #052340;
+}
+#contact .contact-form textarea {
+  resize: none;
+}
+
+#contact .contact-form input,  #contact .contact-form textarea {
+  width: 60%;
+  padding: 1.2rem;
+}
+
+#contact .gap {
+  padding-top: 0;
+  background: #052340;
+  height: 5px;
+  margin-bottom: 20px;
+}
+
+#main-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
