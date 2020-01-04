@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand3 hour-hand"></div>
+        <div class="hand1 min-hand"></div>
+        <div class="hand2 second-hand"></div>
+        <ul class = "letters">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+        </ul>
+      </div>
+    </div>
+        
+
+
+  <style>
+    html {
+      background: #018DED url(https://www.10wallpaper.com/wallpaper/medium/1503/Ghost_City_Sunset-Windows_10_HD_Wallpaper_medium.jpg);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .letters {
+        font-size: 2em;
+        color: black;
+        display: block;
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        font-style: normal;
+        font-family: cursive;
+    }
+    .letters li:nth-child(1) {
+        transform:translate(4.8em,-.1em);
+    }
+    .letters li:nth-child(2) {
+        transform:translate(5.95em,-.4em);
+    }
+    .letters li:nth-child(3) {
+        transform:translate(6.4em,-0.45em);
+    }
+    .letters li:nth-child(4) {
+        transform:translate(5.95em,-.15em);
+    }
+    .letters li:nth-child(5) {
+        transform:translate(4.6em,-.4em);
+    }
+    .letters li:nth-child(6) {
+        transform:translate(2.7em,-1.3em);
+    }
+    .letters li:nth-child(7) {
+        transform:translate(.95em,-3.6em);
+    }
+    .letters li:nth-child(8) {
+        transform:translate(-.45em,-6.5em);
+    }
+    .letters li:nth-child(9) {
+        transform:translate(-.9em,-10.1em);
+    }
+    .letters li:nth-child(10) {
+        transform:translate(-.25em,-13.3em);
+    }
+    .letters li:nth-child(11) {
+        transform:translate(1.05em,-16.2em);
+    }
+    .letters li:nth-child(12) {
+        transform:translate(2.85em,-18.3em);
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand1 { /* This is for Minute Hand */
+      width: 50%;
+      height: 7px;
+      background: black;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      transform-origin: 100%; /* pivot point of the clock bar*/
+      transform: rotate(90deg); /* clock pointer, which is pointing to the top */
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* This gives a nice ticking bounce */
+    }
+
+    .hand2 { /* This is for Second Hand */
+      width: 40%;
+      height: 5px;
+      background: red;
+      position: absolute;
+      left: 10%;
+      top: 50%;
+      transform-origin: 100%; /* pivot point of the clock bar*/
+      transform: rotate(90deg); /* clock pointer, which is pointing to the top */
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* This gives a nice ticking bounce */
+    }
+
+    .hand3 { /* This is for Hour Hand */
+      width: 30%;
+      height: 7px;
+      background: black;
+      position: absolute;
+      left: 20%;
+      top: 50%;
+      transform-origin: 100%; /* pivot point of the clock bar*/
+      transform: rotate(90deg); /* clock pointer, which is pointing to the top */
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* This gives a nice ticking bounce */
+    }
+
+  </style>
+
+  <script>
+      const secondHand = document.querySelector('.second-hand');
+      const minsHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+
+      function setDate(){
+          const now = new Date(); /* This grabs the current time from the browser/computer */
+
+          const seconds = now.getSeconds(); /* This grabs the seconds from the Date */
+          const secondsDegrees = ((seconds / 60) * 360) + 90; /* This is the calculation of circle rotation */
+          secondHand.style.transform = `rotate(${secondsDegrees}deg)`; /* This moves the 'seconds' ticking bar */
+          
+          const mins = now.getMinutes();
+          const minsDegrees = ((mins / 60) * 360) + ((seconds/60) * 6) + 90;
+          minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+          const hour = now.getHours();
+          const hourDegrees = ((hour / 12) * 360) + ((mins/60) * 6) + 90;;
+          hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+      }
+
+      setInterval(setDate, 1000);
+
+      setDate();
+
+  </script>
+</body>
+</html>
