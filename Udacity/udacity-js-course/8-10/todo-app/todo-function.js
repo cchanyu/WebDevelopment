@@ -21,7 +21,7 @@ const removeTodo = function (id) {
     })
 
     if (todoIndex > -1) {
-        todo.splice(todoIndex, 1)
+        todos.splice(todoIndex, 1)
     }
 }
 
@@ -70,7 +70,7 @@ const generateTodoDOM = function (todo) {
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = todo.completed;
     todoEl.appendChild(checkbox);
-    checkboxbox.addEventListener('change', function () {
+    checkbox.addEventListener('change', function () {
         toggleTodo(todo.id);
         saveTodos(todos);
         renderTodos(todos, filters);

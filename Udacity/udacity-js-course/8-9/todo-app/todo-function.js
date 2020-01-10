@@ -21,7 +21,7 @@ const removeTodo = function (id) {
     })
 
     if (todoIndex > -1) {
-        todo.splice(todoIndex, 1)
+        todos.splice(todoIndex, 1)
     }
 }
 

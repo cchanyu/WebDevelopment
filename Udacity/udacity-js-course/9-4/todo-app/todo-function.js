@@ -14,7 +14,7 @@ const removeTodo = (id) => {
     const todoIndex = todos.findIndex((todo) => todo.id == id);
 
     if (todoIndex > -1) {
-        todo.splice(todoIndex, 1)
+        todos.splice(todoIndex, 1)
     }
 }
 
@@ -59,7 +59,7 @@ const generateTodoDOM = (todo) => {
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = todo.completed;
     todoEl.appendChild(checkbox);
-    checkboxbox.addEventListener('change', () => {
+    checkbox.addEventListener('change', () => {
         toggleTodo(todo.id);
         saveTodos(todos);
         renderTodos(todos, filters);
