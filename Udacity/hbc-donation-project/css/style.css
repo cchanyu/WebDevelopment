@@ -23,6 +23,10 @@ p {
     margin: 0.75rem 0;
 }
 
+i {
+  margin-right: 5px;
+}
+
 /* Utility Classes */
 .container {
     max-width: 1100px;
@@ -253,100 +257,16 @@ p {
     width: 100%;
 }
 
-
-
 /* About */
-
-.heading {
-    font-size: 4rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
-  }
-  .lead {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-  }
-  
   .about-showcase {
-    background:black url("../img/college.jpg") 
+    background:black url("../img/HBCAbout.jpg") 
     no-repeat center center/cover;
-    height: 100vh;
     color: white;
   }
   .about-showcase-content {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    height: 500px;
     padding: 0 2rem;
-    position: absolute;
-    top:65px ;
-    right: 0;
-    left: 0;
-    bottom: 0;
-  
-  
-  }
-  .main{
-    background-color: grey;
-  }
-  
-  .cards {
-    height: 400px;
-    width: 29%;
-    align-content: center;
-    border-radius: 1rem;
-    margin: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-   display: inline-block;
-   padding-bottom: 2rem;
-   background-color: white;
-  }
-  .cards:hover {
-    transform: scale(1.1);
-  }
-  .image img {
-    position: relative;
-    height: 200px;
-    width: 100%;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
-  
-  .title {
-    text-align: center;
-    padding-top: .4rem;
-  
-  }
-  .desc {
-    text-align: center;
-    padding: .8rem;
-  }
-  #reader {
-    display: flex;
-  }
-  #reader div {
-    flex: 1;
-  }
-  #reader .reader-img {
-    background: url("../img/point.jpg")
-    no-repeat center center/cover;
-  
-  }
-
-  .about-bg-dark {
-    background: darkblue;
-    color: white;
-  }
-
-  #donLink {
-    color: white;
-  }
-  #donLink:hover{
-    color: orange;
   }
 
 
@@ -378,16 +298,17 @@ p {
 
 #contact .contact-form label {
   display: flex;
-  flex-direction: column;
+  flex-direction: none;
   flex: 1;
   color: #052340;
 }
+
 #contact .contact-form textarea {
   resize: none;
 }
 
 #contact .contact-form input,  #contact .contact-form textarea {
-  width: 60%;
+  width: 100%;
   padding: 1.2rem;
 }
 
@@ -400,34 +321,75 @@ p {
 
 
 /* Donation */
-
-.donate-bg-primary{
-    background: #052340;
-    color: #fff;
-  }
-  
-  .donate-btn-dark{
-    background: white;;
+  .text {
     color: #052340;
   }
 
-#donate{
-    display: flex 1;
+  .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
   }
   
-  #donate .map, #donate .donate-form{
-    flex: 1;
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
   }
   
-  #donate .donate-form .form-group{
-    margin: 1rem;
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
   }
-  #donate .donate-form label {
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container2 {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    width: 70%;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
     display: block;
   }
   
-  #donate .donate-form input, 
-  #donate .donate-form textarea{
-    width: 100%;
-    padding: 0.5rem;
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+
+  .cc {
+    width: 60%;
+  }
+
+  .ps-1 {
+    padding: 1rem;
   }
