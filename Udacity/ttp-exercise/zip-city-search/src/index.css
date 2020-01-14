@@ -1,0 +1,32 @@
+/* Resetting All the Default Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Overall Settings */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+#route {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: white;
+  width: 17%;
+  text-decoration: none;
+  color: black;
+}
