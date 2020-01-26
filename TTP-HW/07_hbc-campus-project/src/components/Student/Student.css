@@ -1,0 +1,22 @@
+.StudentHeader {
+  margin: 1.5rem;
+  color: #052340;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+.student001 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Background003 {
+  opacity: 0.9;
+  background: white;
+}
+
+.S001 {
+  height: 200px;
+}

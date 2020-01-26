@@ -1,0 +1,64 @@
+.route {
+    text-decoration: none;
+    color: #052340;
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+    margin: .5rem;
+    border-radius: 10px;
+}
+
+.route:hover {
+    background: lightgray;
+}
+
+.container {
+    padding: 0.3rem;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 3px #052340 solid;
+    position: sticky;
+    justify-content: space-between;
+}
+
+.container2 {
+    padding: 0.3rem;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.container3 {
+    margin: 0;
+    text-decoration: none;
+    color: #052340;
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container4 {
+    padding: .3rem;
+    margin: .3rem;
+    height: 50px;
+    width: 80px;
+}
+
+.container5 {
+    display: flex;
+}
+
+.container6 {
+    text-emphasis: bold;
+    color: #052340;
+}
+
+.zz {
+    text-decoration: none;
+    color: #052340;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <h1 class="logo"><a href="index.html"><p class="logo">Chanyu Choung - CUNY2x: Tech Talent Program: Cohort 5</p></a></h1>
+        <ul>
+        <li><a class="current" href="index.html">index</a></li>
+        </ul>
+    </nav>
+    <div class="gap"></div>
+
+    <!-- Functions -->
+    <div class="container">
+        <button id = "addRow" class = "btn">Add Row</button>
+        <button id = "addColumn" class = "btn">Add Column</button>
+        <button id = "deleteRow" class = "btn">Delete Row</button>
+        <button id = "deleteColumn" class = "btn">Delete Column</button>
+        <div class="btn-container">
+            <select id="color" class="btn">
+              <option value="" disabled selected>Select your color</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
+              <option value="orange">Orange</option>
+              <option value="purple">Purple</option>
+            </select>
+        </div>
+        <button class = "btn" onclick="setAllCellColor()">
+            Fill All
+        </button>
+        <button id = "reset" class = "btn">Reset</button>
+    </div>
+    
+    <!-- Tables -->
+    <div id = "main-container" class = "main-container"><table style="width:100%" id = "table" class = "table" value="table" onload="table()"></table></div>
+    
+    <!-- Javascript Tags -->
+    <script src = "js/app.js"></script>
+</body>
+</html>

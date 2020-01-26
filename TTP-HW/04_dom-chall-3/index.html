@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+    <header id = "header">
+        <div class="container">
+            <h1>Currency Converter</h1>
+        </div>
+    </header>
+
+    <div class="center">
+        <input id = "converted1" class = "btn" placeholder="Converted Value"></input>
+    </div>
+
+    <div class="container">
+        <select id="countryCurrency1" class="btn" onchange="setCurrency()">
+            <option value="" disabled selected>Select the country</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="CAD">CAD ($)</option>
+            <option value="KRW">KRW (₩)</option>
+            <option value="JPY">JPY (¥)</option>
+          </select>
+          <select id="countryCurrency2" class="btn" onchange="setCurrency()">
+            <option value="" disabled selected>Select the country</option>
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="CAD">CAD ($)</option>
+            <option value="KRW">KRW (₩)</option>
+            <option value="JPY">JPY (¥)</option>
+          </select>
+    </div>
+
+    <div class="actions">
+        <div class="container">
+            <form id = "currencyForm1">
+                <input id = "currencyInput1" class="input btn" type="text" placeholder="Enter a value to convert">
+            </form>
+            <form id = "currencyForm2">
+                <input id = "currencyInput2" class="input btn" type="text" placeholder="Enter a value to convert">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id = "convert1" class="button btn">Convert</button>
+        <button id = "reset1" class="button btn">Reset</button>
+    </div>
+
+    <!-- Javascript -->
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+.Background {
+    background-image: url("https://thumbs.gfycat.com/MediocreElegantFattaileddunnart-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: calc(100vh - 88.19px);
+    position: relative;
+}
+
+.div {
+    display: flex;
+    /* Flex default is row */
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+
+    /* Overlay */
+    position: absolute;
+    top: calc(15vh - 88.19px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.div2 {
+    color: #052340;
+    border-radius: 15px;
+    font-size: 3rem;
+    padding: 5rem;
+    opacity: 0.9;
+    text-align: center;
+    background: white;
+}
+
+.logoSize {
+    padding: .3rem;
+    margin: .3rem;
+    height: 70px;
+    width: 110px;
+}
+
+.textSize {
+    font-size: 16px;
+}
+
+
+::selection {
+    background: #87a9c9; /* WebKit/Blink Browsers */
+}
+
+input[type=text], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    border: 1px solid #DDDDDD;
+}
+   
+input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px #052340;
+    border: 1px solid #052340;
+}
+
+input[type=password], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    border: 1px solid #DDDDDD;
+}
+   
+input[type=password]:focus, textarea:focus {
+    box-shadow: 0 0 5px #052340;
+    border: 1px solid #052340;
+}
+
+input[type=submit], textarea {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    border: 1px solid #DDDDDD;
+}
+   
+input[type=submit]:focus, textarea:focus {
+    box-shadow: 0 0 5px #052340;
+    border: 1px solid #052340;
+}

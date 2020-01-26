@@ -1,0 +1,45 @@
+.App {
+text-align: center;
+}
+
+#cityName {
+border: 3px solid black;
+background: white;
+color: black;
+width: 30%;
+padding: 2rem;
+margin: 1rem;
+text-align: center;
+}
+
+#textarea {
+padding: 1rem;
+margin: 1rem;
+border: 3px solid black;
+border-radius: 5px;
+background: white;
+color: black;
+}
+
+#textarea2 {
+padding: 1rem;
+margin: 1rem;
+border: 3px solid black;
+border-radius: 5px;
+background: white;
+color: black;
+width: 30%;
+}
+
+#input {
+padding: 1rem;
+margin: 1rem;
+border: 3px solid black;
+border-radius: 5px;
+background: white;
+color: black;
+}
+
+#input:hover {
+background: lightgray;
+}

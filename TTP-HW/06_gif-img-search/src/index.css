@@ -1,0 +1,58 @@
+/* Resetting All the Default Settings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Overall Settings */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  background: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 1rem;
+}
+
+.route {
+display: flex;
+padding: 1rem;
+margin: 1rem;
+border: 3px solid black;
+border-radius: 5px;
+background: white;
+text-decoration: none;
+color: black;
+text-align: center;
+}
+
+.route:hover {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: lightgray;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+}
+
+img {
+  margin: .3rem 1rem;
+  padding: 1rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: black;
+}

@@ -1,0 +1,52 @@
+.student-button {
+  margin: 1rem;
+  padding: 1rem;
+  color: #052340;
+  border-radius: 10px;
+  background: white;
+  font-size: 16px;
+  border: 1px lightgray solid;
+  box-shadow: 2px 2px #ccc;
+
+}
+
+.student-button:hover {
+  background: lightgray;
+}
+
+/* .CampusHeader {
+  margin: 1.5rem;
+  color: #052340;
+} */
+
+.buttonEnd {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.div-wrap {
+  display: flex;
+}
+/* 
+#StudentContainer {
+  flex-wrap: wrap;
+  width: 100%;
+} */
+
+/* #StudentContainer {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+} */
+/* .Students {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
+
+/* .ContentHeader {
+  display: flex;
+  justify-content: space-between;
+} */
+

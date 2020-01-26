@@ -1,0 +1,130 @@
+/* .StudentCard {
+  border: 1px lightgray solid;
+  box-shadow: 2px 2px #ccc;
+  border-radius: 10px;
+  width: 70%;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; 
+} 
+
+
+/* .StudentBackground {
+  background-image: url('../../src/img/HBCShowcase.jpeg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: calc(100vh - 88.19px);
+  position: relative;
+} */
+
+/* 
+.divCenter {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+
+/* .formatColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .center2 {
+  color: #052340;
+  border-radius: 15px;
+  font-size: 2rem;
+  padding: 6rem;
+  opacity: 0.9;
+  flex-direction: row;
+  text-align: center;
+  background: white;
+} */
+/* 
+.item1 {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #052340;
+  background: white;
+  font-size: 16px;
+  box-shadow: 2px 2px #ccc;
+  width: 50%;
+} */
+
+
+.divCentering {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.item-2 {
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  color: #052340;
+  background: white;
+  font-size: 14px;
+  box-shadow: 2px 2px #ccc;
+  
+}
+
+.item3 {
+  color: #052340;
+}
+
+.header-font {
+  font-size: 50px;
+}
+
+.studentEditHeader-margin {
+  margin: 3rem;
+}
+
+.textPadding {
+  padding: .5rem;
+}
+
+.textFont {
+  font-size: 16px;
+}
+
+.formatColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.ButtonMargin {
+  margin: 2rem;
+}
+
+.ButtonWid {
+  width: 20rem;
+}
+.Buttonheight {
+  height: 2.5rem;
+}
+.text-Centering {
+  text-align: center;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance:textfield; 
+}
+
