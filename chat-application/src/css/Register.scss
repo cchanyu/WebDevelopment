@@ -46,6 +46,16 @@ $textColor: #5d5d8d;
                 }
             }
 
+            .cancel {
+                background: none;
+                font-weight: bold;
+                color: $textColor;
+
+                &:hover {
+                    color: $bgColor;
+                }
+            }
+
             button {
                 background-color: $bgColor;
                 color: white;
@@ -53,6 +63,11 @@ $textColor: #5d5d8d;
                 font-weight: bold;
                 border: none;
                 cursor: pointer;
+                border-radius: 1rem;
+
+                &:hover {
+                    color: $textColor;
+                }
             }
 
             label {

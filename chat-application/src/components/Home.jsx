@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <DraggableCore axis="both" bounds="parent">
+      <DraggableCore axis="both" bounds="parent" nodeRef={draggableRef}>
         <Resizable 
           width={1000}
           height={700}

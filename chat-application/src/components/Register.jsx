@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { db, auth, storage } from '../firebase/firebase.config';
@@ -7,27 +7,42 @@ import { doc, setDoc } from 'firebase/firestore';
 import Add from '../img/addAvatar.png';
 import '../css/Register.scss';
 import { useNavigate, Link } from 'react-router-dom';
+import DefaultAvatar from '../img/person.jpg';
 
 
 const Register = () => {
   const [err, setErr] = useState(false);
+  const [warning, setWarning] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [img, setImg] = useState(DefaultAvatar);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setImg(DefaultAvatar)
+  }, [])
+
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault()
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    const file = e.target[3].files[0];
+
+    if (displayName === '' || email === '' || password === '') {
+      setWarning(true)
+      setTimeout(() => {
+        setWarning(false);
+      }, 5000);
+      return;
+    }
+    
+    setLoading(true);
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
 
-      await uploadBytesResumable(storageRef, file).then(() => {
+      await uploadBytesResumable(storageRef, img).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
             try{
               //Update profile
@@ -68,14 +83,17 @@ const Register = () => {
           <input type='text' placeholder='display name' />
           <input type='email' placeholder='email' />
           <input type='password' placeholder='password' />
-          <input style={{display:"none"}} type='file' id='file' />
-          <label htmlFor='file'>
-            <img src={Add} alt='add' />
-            <span>Add an Avatar</span>
-          </label>
+          {img?.name === undefined ? <div className='attach'>
+            <input style={{display:"none"}} type='file' id='file' onChange={e => setImg(e.target.files[0])} />
+            <label htmlFor='file'>
+              <img src={Add} alt='add' />
+              <span>Add an Avatar</span>
+            </label>
+          </div> : <button className='cancel' onClick={() => setImg(null)}>X</button>}
           <button disabled={loading}>Sign up</button>
-          {loading && "Uploading and compressing the image please wait..."}
+          {loading && "Registering... Please wait."}
           {err && <span>Something went wrong</span>}
+          {warning && <span style={{color: "red"}}>Please fill all the form</span>}
         </form>
         <p>Do you have an account? <Link to="/ChatApplication/login">Login</Link></p>
       </div>
