@@ -8,18 +8,18 @@ import { AuthContext } from './context/AuthContext';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
-  
-  // const ProtectedRoute = ({children}) => {
-  //   if(!currentUser) {
-  //     return <Navigate to="/ChatApplication/login" />
-  //   }
-  // }
+  const ProtectedRoute = ({children}) => {
+    if(!currentUser) {
+      return <Navigate to="/ChatApplication/login" />
+    }
+    return children
+  }
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/ChatApplication/'>
-          <Route index element={currentUser ? <Home /> : <Login />} />
+          <Route index element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
           <Route path="/ChatApplication/login" element={<Login />} />
           <Route path="/ChatApplication/register" element={<Register />} />
         </Route>
