@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import Img from '../img/img.png'
 import Attach from '../img/attach.png'
 import { AuthContext } from '../context/AuthContext'
@@ -16,13 +16,17 @@ const Input = () => {
   const {currentUser} = useContext(AuthContext)
   const {data} = useContext(ChatContext)
 
-  const handleSend = async () => {
+  const handleSend = useCallback(async () => {
+    if (text === '' && img === null) {
+      return;
+    }
+
     if(img) {
       const storageRef = ref(storage, uuid());
       const uploadTask = uploadBytesResumable(storageRef, img);
 
       uploadTask.on (
-        (error) => {
+        (err) => {
           setErr(false)
         },
         () => {
@@ -65,18 +69,35 @@ const Input = () => {
 
     setText("")
     setImg(null)
-  }
+  }, [text, img, currentUser.uid, data.chatId, data.user.uid]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 13) { // keycode for enter
+        event.preventDefault();
+        handleSend();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [text, img, handleSend]);
+  const isChatIdNull = data.chatId === "null";
 
   return (
     <div className='input'>
-      <input type='text' placeholder='Type something...' onChange={e => setText(e.target.value)} value={text}/>
+      <input type='text' placeholder='Type something...' onChange={e => setText(e.target.value)} value={text} disabled={isChatIdNull}/>
       <div className='send'>
-        <img src={Attach} alt="" />
-        <input type="file" style={{display:"none"}} id='file' onChange={e => setImg(e.target.files[0])}/>
-        <label htmlFor='file'>
-          <img src={Img} alt="" />
-        </label>
-        <button onClick={handleSend}>Send</button>
+        {img === null ? <div className='attach'>
+          <img src={Attach} alt="" disabled={isChatIdNull} />
+          <input type="file" style={{display:"none"}} id='file' onChange={e => setImg(e.target.files[0])} disabled={isChatIdNull}/>
+          <label htmlFor='file'>
+            <img src={Img} alt="" />
+          </label>
+        </div> : <button onClick={() => setImg(null)}>X</button>}
+        <button onClick={() => handleSend()} disabled={isChatIdNull}>Send</button>
+        {err && <span>Message couldn't be sent!</span>}
       </div>
     </div>
   )

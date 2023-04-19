@@ -18,13 +18,14 @@ const Messages = () => {
     };
   }, [data.chatId]);
 
-  console.log(messages)
-
   return (
     <div className="messages">
-      {messages.map((m) => (
-        <Message message={m} key={m.id} />
-      ))}
+      {data.chatId === 'null' ? <span>Select a user to chat with.</span>
+      : <div className="messagesWrapper">
+        {messages.map((m) => (
+          <Message message={m} key={m.id} />
+        ))}
+      </div>}
     </div>
   );
 };
